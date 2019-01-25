@@ -9,3 +9,12 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias SiteInspectionServer.{User, Checklist, Repo, Project}
+
+
+{:ok, user} = User.changeset(%User{}, %{name: "Andrew Segal", email: "segal.a@hotmail.com", password: "123"}) |> Repo.insert
+
+{:ok, project} = Project.changeset(%Project{}, %{name: "first project", job_number: "1000", address: "11 Dunbloor", gc_company: "Company name here", permit_number: "1000"}) |> Repo.insert
+
+Checklist.changeset(%Checklist{}, %{name: "first checklist", project_id: project.id, user_id: user.id}) |> Repo.insert
