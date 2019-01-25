@@ -3,7 +3,7 @@ defmodule SiteInspectionServer.Repo.Migrations.CreateChecklistTable do
 
   def change do
     create table :checklists do
-      add :user, references(:users)
+      add :user_id, references(:users)
       add :name, :string
     end
   end
