@@ -1,1 +1,1 @@
-alias SiteInspectionServer.{User, Checklist, Repo, Project}
+alias SiteInspectionServer.{User, Checklist, Repo, Project, Task}
