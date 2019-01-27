@@ -9,10 +9,10 @@ defmodule SiteInspectionServerWeb.Router do
     pipe_through :api
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
-      schema: SiteInspectionServerWeb.Graphql.Schema
+      schema: SiteInspectionServerWeb.Schema
 
     forward "/", Absinthe.Plug,
-      schema: SiteInspectionServerWeb.Graphql.Schema
+      schema: SiteInspectionServerWeb.Schema
   end
 
   # Other scopes may use custom stacks.
