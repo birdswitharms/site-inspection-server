@@ -19,7 +19,6 @@ defmodule SiteInspectionServer.Checklist do
     |> cast_assoc(:project)
     |> cast_assoc(:tasks)
     |> validate_required([:name])
-    |> assoc_constraint(:user)
     |> assoc_constraint(:project)
   end
 end

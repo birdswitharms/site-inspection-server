@@ -14,6 +14,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
   end
 
   object :checklist do
+    field :id, :id
     field :user, :user do
       resolve &ChecklistResolver.get_user_with_checklist/3
     end
@@ -27,6 +28,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
   end
 
   object :project do
+    field :id, :id
     field :name, :string
     field :job_number, :string
     field :address, :string
@@ -38,6 +40,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
   end
 
   object :user do
+    field :id, :id
     field :name, :string
     field :email, :string
     field :password, :string

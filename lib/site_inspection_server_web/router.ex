@@ -8,11 +8,13 @@ defmodule SiteInspectionServerWeb.Router do
   scope "/" do
     pipe_through :api
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL,
+    forward "/graphql", Absinthe.Plug,
       schema: SiteInspectionServerWeb.Schema
 
-    forward "/", Absinthe.Plug,
-      schema: SiteInspectionServerWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: SiteInspectionServerWeb.Schema,
+      interface: :simple,
+      context: %{pubsub: SiteInspectionServerWeb.Endpoint}
   end
 
   # Other scopes may use custom stacks.
