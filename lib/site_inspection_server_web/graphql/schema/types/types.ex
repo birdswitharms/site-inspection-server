@@ -6,7 +6,6 @@ defmodule SiteInspectionServerWeb.Schema.Types do
   object :task do
     field :id, :id
     field :description, :string
-    field :percent_complete, :integer
     field :completed, :boolean
     field :checklist, :checklist do
       resolve &TaskResolver.get_checklist_with_task/3
