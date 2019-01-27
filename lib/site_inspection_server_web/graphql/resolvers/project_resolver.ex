@@ -1,6 +1,11 @@
 defmodule SiteInspectionServerWeb.Graphql.ProjectResolver do
   alias SiteInspectionServer.Services.ProjectServices
 
+  def all_projects(_root, _args, _info) do
+    projects = ProjectServices.all_projects()
+    {:ok, projects}
+  end
+
   def find_project_by_id(id, _context) do
     project = ProjectServices.get_project_with_id(id)
     {:ok, project}

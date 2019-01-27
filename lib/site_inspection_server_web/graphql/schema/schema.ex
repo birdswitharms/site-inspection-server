@@ -26,6 +26,15 @@ defmodule SiteInspectionServerWeb.Schema do
     field :all_checklists, list_of(:checklist) do
       resolve &ChecklistResolver.all_checklists/3
     end
+    field :all_tasks, list_of(:task) do
+      resolve &TaskResolver.all_tasks/3
+    end
+    field :all_projects, list_of(:project) do
+      resolve &ProjectResolver.all_projects/3
+    end
+    field :all_users, list_of(:user) do
+      resolve &UserResolver.all_users/3
+    end
   end
 
     node interface do

@@ -6,6 +6,11 @@ defmodule SiteInspectionServerWeb.Graphql.UserResolver do
     {:ok, user}
   end
 
+  def all_users(_root, _args, _info) do
+    users = UserServices.all_users()
+    {:ok, users}
+  end
+
   def find_user_by_id(_root, %{id: id}, _info) do
     user = UserServices.get_user_with_id(id)
     {:ok, user}
