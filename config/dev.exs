@@ -11,6 +11,7 @@ config :site_inspection_server, SiteInspectionServerWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  cors_origins: "*",
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../assets", __DIR__)]]
 

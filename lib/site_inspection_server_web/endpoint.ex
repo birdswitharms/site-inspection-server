@@ -37,6 +37,7 @@ defmodule SiteInspectionServerWeb.Endpoint do
     key: "_site_inspection_server_key",
     signing_salt: "0gNrxQyx"
 
+  plug CORSPlug, origin: ["*"]
   plug SiteInspectionServerWeb.Router
 
   @doc """
