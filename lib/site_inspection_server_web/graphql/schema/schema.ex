@@ -35,6 +35,10 @@ defmodule SiteInspectionServerWeb.Schema do
     field :all_users, list_of(:user) do
       resolve &UserResolver.all_users/3
     end
+    field :project, :project do
+      arg :id, :id
+      resolve &ProjectResolver.find_project_by_id/3
+    end
   end
 
     node interface do
