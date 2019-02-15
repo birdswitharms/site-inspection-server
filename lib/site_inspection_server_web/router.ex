@@ -13,7 +13,6 @@ defmodule SiteInspectionServerWeb.Router do
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: SiteInspectionServerWeb.Schema,
-      interface: :simple,
       context: %{pubsub: SiteInspectionServerWeb.Endpoint}
   end
 
