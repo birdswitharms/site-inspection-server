@@ -1,10 +1,10 @@
 defmodule SiteInspectionServerWeb.Schema.Types do
   use Absinthe.Schema.Notation
+  use Absinthe.Relay.Schema.Notation
 
   alias SiteInspectionServerWeb.Graphql.{TaskResolver, ChecklistResolver, UserResolver, ProjectResolver}
 
-  object :task do
-    field :id, :id
+  node object :task do
     field :description, :string
     field :completed, :boolean
     field :checklist, :checklist do
@@ -12,8 +12,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
     end
   end
 
-  object :checklist do
-    field :id, :id
+  node object :checklist do
     field :user, :user do
       resolve &ChecklistResolver.get_user_with_checklist/3
     end
@@ -26,8 +25,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
     field :name, :string
   end
 
-  object :project do
-    field :id, :id
+  node object :project do
     field :name, :string
     field :job_number, :string
     field :address, :string
@@ -38,8 +36,7 @@ defmodule SiteInspectionServerWeb.Schema.Types do
     end
   end
 
-  object :user do
-    field :id, :id
+  node object :user do
     field :name, :string
     field :email, :string
     field :password, :string
