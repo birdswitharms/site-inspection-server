@@ -46,6 +46,7 @@ defmodule SiteInspectionServer.Mixfile do
       {:absinthe_ecto, "~> 0.1.0"},
       {:absinthe_plug, "~> 1.4.0"},
       {:cors_plug, "~> 1.5"},
+      {:shorter_maps, "~> 2.0"},
       {:absinthe_relay, "~> 1.4"},
       {:httpoison, "~> 0.12"},
       {:poison, "~> 3.1"},
